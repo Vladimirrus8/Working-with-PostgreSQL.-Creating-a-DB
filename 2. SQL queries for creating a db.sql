@@ -42,8 +42,13 @@ CREATE TABLE Compilation_Tracks (
     PRIMARY KEY (compilation_id, track_id),
     FOREIGN KEY (compilation_id) REFERENCES Compilations(id) ON DELETE CASCADE,
     FOREIGN KEY (track_id) REFERENCES Tracks(id) ON DELETE CASCADE
-<<<<<<< HEAD
 );
-=======
+
+-- Таблица для связи между жанрами и исполнителями
+CREATE TABLE Artists_Genres (
+    artist_id INT NOT NULL,
+    genre_id INT NOT NULL,
+    PRIMARY KEY (artist_id, genre_id),
+    FOREIGN KEY (artist_id) REFERENCES Artists(id) ON DELETE CASCADE,
+    FOREIGN KEY (genre_id) REFERENCES Genres(id) ON DELETE CASCADE
 );
->>>>>>> f52d4c7021ed712e64f600edd3b11b1f233a439e
